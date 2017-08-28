@@ -88,7 +88,7 @@ def notify(usage):
     else:
         string = user + total + rem + '\n' + bill
 
-    toaster.show_toast("Internet Usage", string)
+    toaster.show_toast("Internet Usage", string, icon_path="python.ico")
 
 
 def on_disconnect(payload):

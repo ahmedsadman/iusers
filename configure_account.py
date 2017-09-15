@@ -11,7 +11,7 @@ class ChangeAccountGUI(wx.Frame):
 	def InitUI(self):
 		panel = wx.Panel(self, -1)
 		vbox = wx.BoxSizer(wx.VERTICAL)
-		combo_choice = ["Account 1", "Account 2", "Account 3"]
+		combo_choice = ["Account 1", "Account 2", "Account 3", "Account 4", "Account 5"]
 		self.combo_box = wx.ComboBox(panel, choices=combo_choice, style=wx.CB_READONLY)
 		self.combo_box.SetSelection(0)
 

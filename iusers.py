@@ -211,6 +211,7 @@ def on_disconnect(payload):
 		r = requests.post(LOGIN_URL, data=payload)
 		usage = get_usage(r.text)
 	except:
+		win32gui.ShowWindow(Minimize, win32con.SW_SHOWNORMAL) # restore minimized window
 		print "Error occured. Please make sure 10.220.20.12 (IUSERS website) is accessible from your cable/wifi."
 		raw_input("")
 		sys.exit(-1)
@@ -219,6 +220,7 @@ def on_disconnect(payload):
 		notify(usage)
 		sys.exit(0)
 	except Exception, e:
+		win32gui.ShowWindow(Minimize, win32con.SW_SHOWNORMAL) # resotre minimized window
 		print "An error occured related to toast notification. Please contact the developer with the error"
 		print "ERROR: ", e
 		raw_input("")

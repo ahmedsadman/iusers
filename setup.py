@@ -12,4 +12,4 @@ setup(
 			"optimize": 2,
 		}
 	},
-	console=['iusers.py'], zipfile=None)
+	console=['iusers.py'], windows=['configure_account.py'])

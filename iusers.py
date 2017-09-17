@@ -176,7 +176,15 @@ def connect_internet(username, password, connection):
 
 
 def notify(usage):
+	fallback = 0
+	win_ver = platform.win32_ver()[0]
+	if float(win_ver) < 10:
+		fallback = 1
+
 	try:
+		if fallback:
+			raise AssertionError("Non-compatible windows version")
+
 		toaster = ToastNotifier()
 		user = '%s\t\t:    %s\n' % ('User', usage['username'])
 		total = '%s\t\t:    %s\n' % ('Total Use', usage['total'])
@@ -229,12 +237,6 @@ def on_disconnect(payload):
 
 def main():
 	intro()
-	# win_ver= platform.win32_ver()[0]
-	# if win_ver != '10':
-	# 	print 'Sorry, this program is made only for Windows 10'
-	# 	raw_input("")
-	# 	sys.exit(0)
-
 	data = load_json('login_info.json')
 	active = data['active']
 	if int(active) == 0:

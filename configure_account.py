@@ -21,7 +21,7 @@ class ChangeAccountGUI(wx.Frame):
 		self.st_conn = wx.StaticText(panel, label='Connection Name')
 
 		self.user_txt = wx.TextCtrl(panel, size=(200, -1))
-		self.pass_txt = wx.TextCtrl(panel, size=(200, -1))
+		self.pass_txt = wx.TextCtrl(panel, size=(200, -1), style=wx.TE_PASSWORD)
 		self.conn_txt = wx.TextCtrl(panel, size=(200, -1))
 		self.btnConfirm = wx.Button(panel, label='Save and Activate', size = (130, 40))
 		self.loadcombo()
